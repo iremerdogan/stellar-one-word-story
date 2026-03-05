@@ -63,7 +63,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Live Demo
 
-[\[Coming soon\]](https://stellar-one-word-story.vercel.app)
+https://stellar-one-word-story.vercel.app
 
 ## License
 
