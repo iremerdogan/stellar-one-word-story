@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# One Word Story — Stellar dApp
 
-## Getting Started
+A collaborative storytelling dApp built on the Stellar blockchain. Every word submitted by a user is permanently written to the Stellar Testnet as a transaction memo. Together, users build a story that lives forever on the blockchain.
 
-First, run the development server:
+## What Makes It Unique
 
+Traditional apps store data on centralized servers that can be modified or deleted. One Word Story writes each word directly to the Stellar blockchain — immutable, transparent, and permanent. No database. No central authority. Just a story that grows one word at a time.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14, TypeScript, Tailwind CSS
+- **Blockchain:** Stellar Testnet
+- **Wallet:** Freighter Browser Extension
+- **SDK:** @stellar/stellar-sdk, @stellar/freighter-api
+
+## How It Works
+
+1. User connects their Freighter wallet
+2. User types a single word and clicks Submit
+3. A Stellar transaction is created with the word as a memo
+4. Freighter prompts the user to sign the transaction
+5. The signed transaction is submitted to Stellar Testnet
+6. The word appears in the shared story, permanently
+
+## Setup & Installation
+
+### Prerequisites
+
+- Node.js v18 or higher
+- npm
+- [Freighter Wallet](https://freighter.app) browser extension
+- A Stellar Testnet account funded via [Friendbot](https://friendbot.stellar.org)
+
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/iremerdogan/stellar-one-word-story
+cd stellar-one-word-story
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the root directory:
+```
+NEXT_PUBLIC_STELLAR_PUBLIC_KEY=your_stellar_public_key
+STELLAR_SECRET_KEY=your_stellar_secret_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run Locally
+```bash
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install the [Freighter](https://freighter.app) browser extension
+2. Create or import a Stellar wallet in Freighter
+3. Switch Freighter to **Testnet**
+4. Fund your testnet account at [https://friendbot.stellar.org](https://friendbot.stellar.org)
+5. Visit the app, connect your wallet, and add your word to the story
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Live Demo
 
-## Deploy on Vercel
+[Coming soon]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
