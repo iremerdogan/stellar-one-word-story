@@ -17,7 +17,7 @@ export async function GET() {
       .call();
 
     const words = transactions.records
-      .filter((tx) => tx.memo && tx.memo_type === "text")
+      .filter((tx) => tx.memo_type === "text" && tx.memo)
       .map((tx) => tx.memo as string);
 
     return NextResponse.json({ words });

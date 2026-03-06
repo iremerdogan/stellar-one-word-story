@@ -164,7 +164,7 @@ export default function Home() {
       })
         .addOperation(
           StellarSdk.Operation.payment({
-            destination: walletAddress,
+            destination: process.env.NEXT_PUBLIC_STELLAR_PUBLIC_KEY!,
             asset: StellarSdk.Asset.native(),
             amount: "0.0000001",
           })
