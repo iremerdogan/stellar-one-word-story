@@ -250,7 +250,7 @@ export default function Home() {
       </div>
 
       {message && (
-        <p className="mt-5 text-sm text-yellow-300/80 z-10 bg-yellow-400/5 px-4 py-2 rounded-lg border border-yellow-400/10">
+        <p data-testid="status-message" className="mt-5 text-sm text-yellow-300/80 z-10 bg-yellow-400/5 px-4 py-2 rounded-lg border border-yellow-400/10">
           {message}
         </p>
       )}
